@@ -412,7 +412,7 @@ var DoleticUIModule = new function () {
                                 "<button class=\"ui blue icon button\" data-tooltip=\"Modifier\" onClick=\"DoleticUIModule.editProject(" + data.object[i].number + "); return false;\">" +
                                 "<i class=\"write icon\"></i>" +
                                 "</button>" +
-                                "<button class=\"ui yellow icon button\" data-tooltip=\"Avorter\" onClick=\"DoleticUIModule.abortProject(" + data.object[i].number + "); return false;\">" +
+                                "<button class=\"ui yellow icon button\" data-tooltip=\"Archiver\" onClick=\"DoleticUIModule.abortProject(" + data.object[i].number + "); return false;\">" +
                                 "<i class=\"archive icon\"></i>" +
                                 "</button>" +
                                 "<button class=\"ui orange icon button\" data-tooltip=\"Mettre en Stand-By\" onClick=\"DoleticUIModule.disableProject(" + data.object[i].number + "); return false;\">" +
@@ -425,7 +425,7 @@ var DoleticUIModule = new function () {
                                 "<button class=\"ui blue icon button\" data-tooltip=\"Modifier\" onClick=\"DoleticUIModule.editProject(" + data.object[i].number + "); return false;\">" +
                                 "<i class=\"write icon\"></i>" +
                                 "</button>" +
-                                "<button class=\"ui yellow icon button\" data-tooltip=\"Avorter\" onClick=\"DoleticUIModule.abortProject(" + data.object[i].number + "); return false;\">" +
+                                "<button class=\"ui yellow icon button\" data-tooltip=\"Archiver\" onClick=\"DoleticUIModule.abortProject(" + data.object[i].number + "); return false;\">" +
                                 "<i class=\"archive icon\"></i>" +
                                 "</button>" +
                                 "<button class=\"ui orange icon button\" data-tooltip=\"Mettre en Stand-By\" onClick=\"DoleticUIModule.disableProject(" + data.object[i].number + "); return false;\">" +

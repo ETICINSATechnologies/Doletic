@@ -21,7 +21,7 @@ class Project implements \JsonSerializable
         'En clôture',
         'Clôturée',
         'En rupture',
-        'Avortée'
+        'Archivée'
     ];
 
     // -- attributes
