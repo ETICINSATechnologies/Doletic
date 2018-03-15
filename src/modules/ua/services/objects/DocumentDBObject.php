@@ -523,7 +523,7 @@ class DocumentServices extends AbstractObjectServices
     public function ResetStaticData()
     {
         $templates = array(
-            ['Proposition Commerciale', 'Propale.docx', null],
+            ['Proposition Commerciale', 'Propale.pptx', null],
             ['Convention Entreprise', 'Convention_entreprise.docx', null],
             ['Récapitulatif de Mission', 'RM.docx', null],
             ['PV de fin d\'étude', 'PV_Fin_etude.docx', null],
