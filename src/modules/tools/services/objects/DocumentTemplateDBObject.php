@@ -208,7 +208,8 @@ class DocumentTemplateServices extends AbstractObjectServices
     {
         return array(
             DocumentProcessor::TYPE_WORD,
-            DocumentProcessor::TYPE_LATEX
+            DocumentProcessor::TYPE_LATEX,
+            DocumentProcessor::TYPE_POWERPOINT
         );
     }
 
