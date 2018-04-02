@@ -119,7 +119,7 @@ var DoleticUIModule = new function () {
         // fill signature fields using user data
         DoleticServicesInterface.getCurrentUser(function (data) {
             if (data.code == 0) {
-                var mail = data.object.username + DoleticConfig.JE.mail_domain;
+                var mail = data.object.firstname + '.'+ data.object.lastname + DoleticConfig.JE.mail_domain;
                 $('#user_mail').html(mail).attr('href', 'mailto:' + mail);
                 // retrieve user data
                 UserDataServicesInterface.getById(data.object.id, function (data) {
