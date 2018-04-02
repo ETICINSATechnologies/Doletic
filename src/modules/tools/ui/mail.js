@@ -84,7 +84,7 @@ var DoleticUIModule = new function () {
             '<tr>' +
             '<td style="padding-right: 15px;">' +
             '<a href="'+ DoleticConfig.JE.website_url + '">' +
-            '<img src="' + DoleticConfig.JE.logo_url + '" alt="" width="139" height="109" />' +
+            '<img src="' + DoleticConfig.JE.logo_url + '" alt="" width="97" height="91" />' +
             '</a>' +
             '</td>' +
             '<td style="font-size: 13px; line-height: 14px; font-family: Helvetica,sans-serif;">' +
