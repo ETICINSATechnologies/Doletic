@@ -119,12 +119,12 @@ var DoleticUIModule = new function () {
         // fill signature fields using user data
         DoleticServicesInterface.getCurrentUser(function (data) {
             if (data.code == 0) {
-                var mail = data.object.firstname + '.'+ data.object.lastname + DoleticConfig.JE.mail_domain;
-                $('#user_mail').html(mail).attr('href', 'mailto:' + mail);
                 // retrieve user data
                 UserDataServicesInterface.getById(data.object.id, function (data) {
                     if (data.code == 0) {
-                        // set firstname, lastname, phone and year
+                        // set firstname, lastname, phone and year  
+                	var mail = data.object.firstname + '.'+ data.object.lastname + DoleticConfig.JE.mail_domain;
+                	$('#user_mail').html(mail).attr('href', 'mailto:' + mail);
                         $('#user_fullname').html(data.object.firstname + ' ' + data.object.lastname);
                         $('#user_phone').html(data.object.tel.replace(/^0/, '+33 (0)')).attr('href', 'tel:' + data.object.tel);
                         $('#user_departement').html(data.object.insa_dept);
