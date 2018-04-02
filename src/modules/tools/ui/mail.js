@@ -89,9 +89,9 @@ var DoleticUIModule = new function () {
             '</td>' +
             '<td style="font-size: 13px; line-height: 14px; font-family: Helvetica,sans-serif;">' +
             '<p style="margin: 0px 0px;">' +
-            '<span id="user_fullname" style="display: inline-block; margin-top: 12px; color: #006600; font-size: medium;">' +
+            '<span id="user_fullname" style="display: inline-block; margin-top: 12px; color:  #005360; font-size: medium;">' +
             '</span><br />' +
-            '<span style="display: inline-block; margin-top: 2px; color: #006600; font-size: medium;">' +
+            '<span style="display: inline-block; margin-top: 2px; color:  #005360; font-size: medium;">' +
             '<strong id="user_position"></strong>' +
             '</span><br />' +
             '<span style="color: #3366ff;">' +
