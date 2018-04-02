@@ -6,7 +6,7 @@ var DoleticConfig = new function () {
     this.JE = {
         name: 'ETIC INSA Technologies',
         website_url: 'http://www.etic-insa.com',
-        logo_url: 'http://www.etic-insa.com/assets/logo-etic.png',
+        logo_url: 'https://ibin.co/3w70yoxDrwvs.png',
         school: 'INSA Lyon',
         mail_domain: '@etic-insa.com'
     };
