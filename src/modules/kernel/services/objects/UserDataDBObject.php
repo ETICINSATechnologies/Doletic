@@ -512,7 +512,7 @@ class UserDataServices extends AbstractObjectServices
     private function __get_user_data_by_id($id)
     {
         // create sql params array
-        $sql_params = array(":" . UserDataDBObject::COL_ID => $id);
+        $sql_params = array(":" . UserDataDBObject::COL_USER_ID => $id);
         // create sql request
         $sql = parent::getDBObject()->GetTable(UserDataDBObject::TABL_USER_DATA)->GetSELECTQuery(
             array(DBTable::SELECT_ALL), array(UserDataDBObject::COL_ID));
