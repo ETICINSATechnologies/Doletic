@@ -92,7 +92,7 @@ var DoleticUIModule = new function () {
                     DoleticUIFactory.padleft(String(date.getMinutes()), 2, '0') + ':' +
                     DoleticUIFactory.padleft(String(date.getSeconds()), 2, '0'));
                 // retrieve user data
-                UserDataServicesInterface.getById(data.object.id, function (data) {
+                UserDataServicesInterface.getByUserId(data.object.id, function (data) {
                     if (data.code == 0) {
                         // set user name
                         $('#user_fulname').html(data.object.firstname + ' ' + data.object.lastname);
