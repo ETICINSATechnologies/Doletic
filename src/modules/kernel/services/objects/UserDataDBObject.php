@@ -325,6 +325,7 @@ class UserDataServices extends AbstractObjectServices
     const PARAM_SINCE = "since";
     // --- internal services (actions)
     const GET_USER_DATA_BY_ID = "byidud";
+    const GET_USER_DATA_BY_USER_ID = "byuidud";
     const GET_ALL_BY_DIV = "allbydiv";
     const GET_ALL_BY_POS = "allbypos";
     const GET_ALL_BY_DPT = "allbydpt";
@@ -370,7 +371,9 @@ class UserDataServices extends AbstractObjectServices
         $data = null;
         if (!strcmp($action, UserDataServices::GET_USER_DATA_BY_ID)) {
             $data = $this->__get_user_data_by_id($params[UserDataServices::PARAM_ID]);
-        } else if (!strcmp($action, UserDataServices::GET_CURRENT_USER_DATA)) {
+        } else if (!strcmp($action, UserDataServices::GET_USER_DATA_BY_USER_ID)) {
+            $data = $this->__get_user_data_by_user_id($params[UserDataServices::PARAM_USER_ID]);
+        }else if (!strcmp($action, UserDataServices::GET_CURRENT_USER_DATA)) {
             $data = $this->__get_current_user_data();
         } else if (!strcmp($action, UserDataServices::GET_USER_LAST_POS)) {
             $data = $this->__get_user_last_position($params[UserDataServices::PARAM_USER_ID]);
@@ -512,10 +515,48 @@ class UserDataServices extends AbstractObjectServices
     private function __get_user_data_by_id($id)
     {
         // create sql params array
-        $sql_params = array(":" . UserDataDBObject::COL_USER_ID => $id);
+        $sql_params = array(":" . UserDataDBObject::COL_ID => $id);
         // create sql request
         $sql = parent::getDBObject()->GetTable(UserDataDBObject::TABL_USER_DATA)->GetSELECTQuery(
             array(DBTable::SELECT_ALL), array(UserDataDBObject::COL_ID));
+        // execute SQL query and save result
+        $pdos = parent::getDBConnection()->ResultFromQuery($sql, $sql_params);
+        // create udata var
+        $udata = null;
+        if (isset($pdos)) {
+            if (($row = $pdos->fetch()) !== false) {
+                $udata = new UserData(
+                    $row[UserDataDBObject::COL_ID],
+                    $row[UserDataDBObject::COL_USER_ID],
+                    $row[UserDataDBObject::COL_GENDER],
+                    $row[UserDataDBObject::COL_FIRSTNAME],
+                    $row[UserDataDBObject::COL_LASTNAME],
+                    $row[UserDataDBObject::COL_BIRTHDATE],
+                    $row[UserDataDBObject::COL_TEL],
+                    $row[UserDataDBObject::COL_EMAIL],
+                    $row[UserDataDBObject::COL_ADDRESS],
+                    $row[UserDataDBObject::COL_CITY],
+                    $row[UserDataDBObject::COL_POSTAL_CODE],
+                    $row[UserDataDBObject::COL_COUNTRY],
+                    $row[UserDataDBObject::COL_SCHOOL_YEAR],
+                    $row[UserDataDBObject::COL_INSA_DEPT],
+                    $row[UserDataDBObject::COL_AVATAR_ID],
+                    $row[UserDataDBObject::COL_AG],
+                    $row[UserDataDBObject::COL_DISABLED],
+                    $row[UserDataDBObject::COL_OLD],
+                    $row[UserDataDBObject::COL_CREATION_DATE],
+                    $this->__get_all_user_positions($row[UserDataDBObject::COL_USER_ID]));
+            }
+        }
+        return $udata;
+    }
+    private function __get_user_data_by_user_id($user_id)
+    {
+        // create sql params array
+        $sql_params = array(":" . UserDataDBObject::COL_USER_ID => $user_id);
+        // create sql request
+        $sql = parent::getDBObject()->GetTable(UserDataDBObject::TABL_USER_DATA)->GetSELECTQuery(
+            array(DBTable::SELECT_ALL), array(UserDataDBObject::COL_USER_ID));
         // execute SQL query and save result
         $pdos = parent::getDBConnection()->ResultFromQuery($sql, $sql_params);
         // create udata var
