@@ -256,7 +256,7 @@ var UserDataServicesInterface = new function () {
     this.getByUserId = function (user_id, successHandler) {
         return DoleticServicesInterface.callService(
             this.meta.OBJECT, this.meta.ACTION.GET_USER_DATA_BY_USER_ID,
-            {user_id: user_id},
+            {userId: user_id},
             successHandler);
     };
     this.insertAg = function (ag, presence, successHandler) {
