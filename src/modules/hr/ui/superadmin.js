@@ -704,7 +704,7 @@ var DoleticUIModule = new function () {
         $('.menu .item').tab();
         $('.dropdown').dropdown();
 
-        UserDataServicesInterface.getById(userId, function (data) {
+        UserDataServicesInterface.getByUserId(userId, function (data) {
             // if no service error
             if (data.code == 0 && data.object != "[]") {
                 $('#det_name').html(data.object.gender + " " + data.object.firstname + " " + data.object.lastname);
