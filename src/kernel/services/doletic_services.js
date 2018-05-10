@@ -286,6 +286,7 @@ var DoleticServicesInterface = new function () {
      *  Make an AJAX call to Doletic services to retrieve some data
      */
     this.callService = function (object, action, params, successHandler) {
+        console.log(object, action, params);
         this.ajaxPOST(
             this.doleticMainURL,
             {

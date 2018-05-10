@@ -166,6 +166,7 @@ var UserDataServicesInterface = new function () {
         // --- (actions)
         ACTION: {
             GET_USER_DATA_BY_ID: "byidud",
+            GET_USER_DATA_BY_USER_ID: "byuidud",
             GET_USER_LAST_POS: "lastpos",
             GET_ALL_USER_DATA: "allud",
             GET_ALL_BY_DIV: "allbydiv",
@@ -250,6 +251,14 @@ var UserDataServicesInterface = new function () {
             {id: id},
             successHandler);
     };
+
+    this.getByUserId = function (user_id, successHandler) {
+        return DoleticServicesInterface.callService(
+            this.meta.OBJECT, this.meta.ACTION.GET_USER_DATA_BY_USER_ID,
+            {userId: user_id},
+            successHandler);
+    };
+
     this.insertAg = function (ag, presence, successHandler) {
         return DoleticServicesInterface.callService(
             this.meta.OBJECT, this.meta.ACTION.INSERT_AG,
